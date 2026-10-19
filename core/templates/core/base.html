@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library System{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --pink: #ff4da6; --light-pink: #fff0f6; --dark-pink: #d63384; }
+        body { background-color: var(--light-pink); font-family: 'Segoe UI', sans-serif; }
+        .navbar { background-color: white !important; border-bottom: 3px solid var(--pink); }
+        .navbar-brand, .nav-link { color: var(--dark-pink) !important; font-weight: 600; }
+        .btn-primary { background-color: var(--pink); border-color: var(--pink); }
+        .btn-primary:hover { background-color: var(--dark-pink); border-color: var(--dark-pink); }
+        .card { border: 2px solid #ffc2d1; border-radius: 15px; box-shadow: 0 4px 12px rgba(255,77,166,0.15); }
+        a { color: var(--dark-pink); }
+        h1, h2, h3 { color: var(--dark-pink); }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'core:home' %}">📚 Library System</a>
+    <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="{% url 'core:home' %}">Home</a>
+        <a class="nav-link" href="{% url 'core:book_list' %}">Books</a>
+    </div>
+  </div>
+</nav>
+<div class="container mt-4">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success" style="background:#ffe4ec; border-color:#ffc2d1; color:#d63384;">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

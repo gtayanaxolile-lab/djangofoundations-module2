@@ -1,0 +1,9 @@
+﻿{% extends 'core/base.html' %}
+{% block content %}
+<div class="text-center p-5" style="background:white; border-radius:20px; border:3px solid #ff4da6;">
+  <h1 style="color:#d63384;">Welcome to 📚 Library System</h1>
+  <p>Your pink & white library is ready!</p>
+  <a href="{% url 'core:book_list' %}" class="btn btn-primary" style="background:#ff4da6; border:none; padding:10px 30px; border-radius:20px;">View Books</a>
+  <a href="{% url 'core:book_create' %}" class="btn btn-outline-primary ms-2" style="border-color:#ff4da6; color:#d63384; border-radius:20px;">Add New Book</a>
+</div>
+{% endblock %}

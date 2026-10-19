@@ -1,7 +1,0 @@
-<h1>Library System - Module 2</h1>
-<p>Books:</p>
-{% for book in books %}
-  <p>{{ book.title }} by {{ book.author.name }}</p>
-{% empty %}
-  <p>No books yet - add in admin</p>
-{% endfor %}
